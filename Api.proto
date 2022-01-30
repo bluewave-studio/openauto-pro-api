@@ -1,0 +1,557 @@
+syntax = "proto2";
+
+package io.bluewavestudio.openautopro.api;
+
+enum Constants {
+    API_MAJOR_VERSION = 1;
+    API_MINOR_VERSION = 0;
+}
+
+enum MessageType {
+    MESSAGE_INVALID_ID = 0;
+    MESSAGE_HELLO_REQUEST = 1; // Direction: Client -> OpenAuto Pro
+    MESSAGE_HELLO_RESPONSE = 2; // Direction: Client <- OpenAuto Pro
+    MESSAGE_SET_STATUS_SUBSCRIPTIONS = 3; // Direction: Client -> OpenAuto Pro
+    MESSAGE_CHANGE_REAR_GEAR_STATUS = 4; // Direction: Client -> OpenAuto Pro
+    MESSAGE_PROJECTION_STATUS = 5; // Direction: Client <- OpenAuto Pro
+    MESSAGE_MEDIA_STATUS = 6; // Direction: Client <- OpenAuto Pro
+    MESSAGE_MEDIA_METADATA = 7; // Direction: Client <- OpenAuto Pro
+    MESSAGE_NAVIGATION_STATUS = 8; // Direction: Client <- OpenAuto Pro
+    MESSAGE_NAVIGATION_MANEUVER_DETAILS = 9; // Direction: Client <- OpenAuto Pro
+    MESSAGE_NAVIGATION_MANEUVER_DISTANCE = 10; // Direction: Client <- OpenAuto Pro
+    MESSAGE_REGISTER_STATUS_ICON_REQUEST = 11; // Direction: Client -> OpenAuto Pro
+    MESSAGE_REGISTER_STATUS_ICON_RESPONSE = 12; // Direction: Client <- OpenAuto Pro
+    MESSAGE_UNREGISTER_STATUS_ICON = 13; // Direction: Client -> OpenAuto Pro
+    MESSAGE_CHANGE_STATUS_ICON_STATE = 14; // Direction: Client -> OpenAuto Pro
+    MESSAGE_REGISTER_NOTIFICATION_CHANNEL_REQUEST = 15; // Direction: Client -> OpenAuto Pro
+    MESSAGE_REGISTER_NOTIFICATION_CHANNEL_RESPONSE = 16; // Direction: Client <- OpenAuto Pro
+    MESSAGE_UNREGISTER_NOTIFICATION_CHANNEL = 17; // Direction: Client -> OpenAuto Pro
+    MESSAGE_SHOW_NOTIFICATION = 18; // Direction: Client -> OpenAuto Pro
+    MESSAGE_OBD_CONNECTION_STATUS = 19; // Direction: Client <- OpenAuto Pro
+    MESSAGE_SUBSCRIBE_OBD_GAUGE_CHANGE_REQUEST = 20; // Direction: Client -> OpenAuto Pro
+    MESSAGE_SUBSCRIBE_OBD_GAUGE_CHANGE_RESPONSE = 21; // Direction: Client <- OpenAuto Pro
+    MESSAGE_UNSUBSCRIBE_OBD_GAUGE_CHANGE = 22; // Direction: Client -> OpenAuto Pro
+    MESSAGE_OBD_GAUGE_VALUE_CHANGED = 23; // Direction: Client <- OpenAuto Pro
+    MESSAGE_OBD_INJECT_GAUGE_FORMULA_VALUE = 24; // Direction: Client -> OpenAuto Pro
+    MESSAGE_REGISTER_AUDIO_FOCUS_RECEIVER_REQUEST = 25; // Direction: Client -> OpenAuto Pro
+    MESSAGE_REGISTER_AUDIO_FOCUS_RECEIVER_RESPONSE = 26; // Direction: Client <- OpenAuto Pro
+    MESSAGE_UNREGISTER_AUDIO_FOCUS_RECEIVER = 27; // Direction: Client -> OpenAuto Pro
+    MESSAGE_AUDIO_FOCUS_CHANGE_REQUEST = 28; // Direction: Client -> OpenAuto Pro
+    MESSAGE_AUDIO_FOCUS_CHANGE_RESPONSE = 29; // Direction: Client <- OpenAuto Pro
+    MESSAGE_AUDIO_FOCUS_ACTION = 30; // Direction: Client <- OpenAuto Pro
+    MESSAGE_AUDIO_FOCUS_MEDIA_KEY = 31; // Direction: Client <- OpenAuto Pro
+    MESSAGE_PHONE_CONNECTION_STATUS = 32; // Direction: Client <- OpenAuto Pro
+    MESSAGE_PHONE_VOICE_CALL_STATUS = 33; // Direction: Client <- OpenAuto Pro
+    MESSAGE_PHONE_LEVELS_STATUS = 34; // Direction: Client <- OpenAuto Pro
+    MESSAGE_TEMPERATURE_STATUS = 35; // Direction: Client <- OpenAuto Pro
+    MESSAGE_KEY_EVENT = 36; // Direction: Client -> OpenAuto Pro
+    MESSAGE_INJECT_TEMPERATURE_SENSOR_VALUE = 37; // Direction: Client -> OpenAuto Pro
+    MESSAGE_SET_DAY_NIGHT = 38; // Direction: Client -> OpenAuto Pro
+    MESSAGE_PING = 39; // Direction: Client <-> OpenAuto Pro
+    MESSAGE_PONG = 40; // Direction: Client <-> OpenAuto Pro
+    MESSAGE_BYEBYE = 41; // Direction: Client <-> OpenAuto Pro
+}
+
+message Version {
+    required int32 major = 1;
+    required int32 minor = 2;
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message HelloRequest {
+    required string name = 1; // Name of the client that uses the API
+    required Version api_version = 2; // Version of API used by client
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message HelloResponse {
+    enum HelloResponseResult {
+        HELLO_RESPONSE_RESULT_OK = 1;
+        HELLO_RESPONSE_RESULT_VERSION_MISMATCH = 2;
+        HELLO_RESPONSE_RESULT_UNKNOWN_ERROR = 3;
+    }
+
+    required Version oap_version = 1; // Version of OpenAuto Pro
+    required Version api_version = 2; // Version of API used by OpenAuto Pro
+    required HelloResponseResult result = 3;
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message SetStatusSubscriptions {
+    enum Subscription {
+        // Messsages in topic:
+        // MESSAGE_PROJECTION_STATUS
+        PROJECTION = 1;
+
+        // Messsages in topic:
+        // MESSAGE_MEDIA_STATUS
+        // MESSAGE_MEDIA_METADATA
+        MEDIA = 2;
+
+        // Messsages in topic:
+        // MESSAGE_NAVIGATION_STATUS
+        // MESSAGE_NAVIGATION_MANEUVER_DETAILS
+        // MESSAGE_NAVIGATION_MANEUVER_DISTANCE
+        NAVIGATION = 3;
+
+        // Messsages in topic:
+        // MESSAGE_OBD_CONNECTION_STATUS
+        OBD = 4;
+
+        // Messsages in topic:
+        // MESSAGE_PHONE_CONNECTION_STATUS
+        // MESSAGE_PHONE_VOICE_CALL_STATUS
+        // MESSAGE_PHONE_LEVELS_STATUS
+        PHONE = 5;
+
+        // Messsages in topic:
+        // MESSAGE_TEMPERATURE_STATUS
+        TEMPERATURE = 6;
+    }
+
+    repeated Subscription subscriptions = 1; // List of topics that Client want to be notified of
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message ChangeRearGearStatus {
+    required bool engaged = 1; // Status of the rear gear engagement
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message ProjectionStatus {
+    enum ProjectionState {
+        PROJECTION_STATE_INACTIVE = 1;
+        PROJECTION_STATE_FOREGROUND = 2;
+        PROJECTION_STATE_BACKGROUND = 3;
+    }
+
+    required ProjectionState state = 1; // state of the projection (Android Auto or Autobox, or Mirroring)
+
+    enum ProjectionSource {
+        PROJECTION_SOURCE_NONE = 0;
+        PROJECTION_SOURCE_ANDROID_AUTO = 1;
+        PROJECTION_SOURCE_AUTOBOX = 2;
+        PROJECTION_SOURCE_MIRRORING = 3;
+    }
+    required ProjectionSource source = 2; // source of the projection that is currently on foreground
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message MediaStatus {
+    enum MediaSource {
+        MEDIA_SOURCE_NONE = 0;
+        MEDIA_SOURCE_ANDROID_AUTO = 1;
+        MEDIA_SOURCE_AUTOBOX = 2;
+        MEDIA_SOURCE_A2DP = 3;
+        MEDIA_SOURCE_STORAGE = 4;
+    }
+
+    required string position_label = 1; // Label of current track position (e. g. 03:19)
+    required bool is_playing = 2; // Status of the playback
+    required MediaSource source = 3; // Source of the music playback
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message MediaMetadata {
+    required string album = 1;
+    required string artist = 2;
+    required string title = 3;
+    required string duration_label = 4; // Label of current track duration (e. g. 05:37)
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message NavigationStatus {
+    enum NavigationSource {
+        NAVIGATION_SOURCE_NONE = 0;
+        NAVIGATION_SOURCE_ANDROID_AUTO = 1;
+    }
+
+    required NavigationSource source = 1;
+    
+    enum NavigationState {
+        NAVIGATION_STATE_ACTIVE = 1;
+        NAVIGATION_STATE_INACTIVE = 2;
+    }
+
+    required NavigationState state = 2; // State of the navigation
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message NavigationManeuverDetails {
+    required string description = 1; // description of the maneuver (e. g. Turn left into 2nd Ave)
+    required bytes icon = 2; // Icon of the maneuver in PNG format
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message NavigationManeuverDistance {
+    required string label = 1; // Label of the maneuver distance (e. g. 5 km)
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message RegisterStatusIconRequest {
+    required string name = 1; // Name of the status icon
+    required string description = 2; // Description of the status icon
+    required bytes icon = 3; // Icon data (in jpg, png, bmp, svg)
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message RegisterStatusIconResponse {
+    enum RegisterStatusIconResult {
+        REGISTER_STATUS_ICON_RESULT_OK = 1;
+        REGISTER_STATUS_ICON_RESULT_FAILED = 2;
+    }
+
+    required RegisterStatusIconResult result = 1;
+    optional int32 id = 2; // Status icon id generated during registration (it will be later used for identification of the icon)
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message UnregisterStatusIcon {
+    required int32 id = 1; // Status icon id generated during registration
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message ChangeStatusIconState {
+    required int32 id = 1; // Status icon id generated during registration
+    required bool visible = 2;
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message RegisterNotificationChannelRequest {
+    required string name = 1; // Name of the notification channel
+    required string description = 2; // Description of the notification channel
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message RegisterNotificationChannelResponse {
+    enum RegisterNotificationChannelResult {
+        REGISTER_NOTIFICATION_CHANNEL_RESULT_OK = 1;
+        REGISTER_NOTIFICATION_CHANNEL_RESULT_FAILED = 2;
+    }
+
+    required RegisterNotificationChannelResult result = 1;
+    optional int32 id = 2; // Notification channel id generated during registration (it will be later used for identification of the channel)
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message UnregisterNotificationChannel {
+    required int32 id = 1; // Notification channel id generated during registration
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message ShowNotification {
+    required int32 channel_id = 1; // Notification channel id generated during registration
+    required string title = 2;
+    required string description = 3;
+    required string single_line = 4; // Message that will be displayed on the top bar (e. g. during projection)
+    required bytes icon = 5; // Icon data (in jpg, png, bmp, svg)
+    optional bytes sound_pcm = 6; // Audio that will be played once notification appears on the screen (PCM format)
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message ObdInjectGaugeFormulaValue {
+    required string formula = 1; // Formula that is defined in gauges configuration of OpenAuto Pro
+    required double value = 2;
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message ObdConnectionStatus {
+    enum ObdConnectionState {
+        OBD_CONNECTION_STATE_CONNECTED = 1;
+        OBD_CONNECTION_STATE_DISCONNECTED = 2;
+    }
+
+    required ObdConnectionState state = 1;
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message SubscribeObdGaugeChangeRequest {
+    required int32 gauge_index = 1; // Gauge index that is defined in gauges configuration of OpenAuto Pro
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message SubscribeObdGaugeChangeResponse {
+    enum SubscribeObdGaugeChangeResult {
+        SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_OK = 1;
+        SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_ALREADY_SUBSCRIBED = 2;
+        SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_FAILED = 3;
+    }
+
+    required SubscribeObdGaugeChangeResult result = 1;
+    optional int32 gauge_index = 2; // Gauge index that is defined in gauges configuration of OpenAuto Pro
+    optional string label = 3;
+    optional double min_value = 4;
+    optional double max_value = 5;
+    optional double limit = 6;
+    optional int32 precision = 7;
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message UnsubscribeObdGaugeChange {
+    required int32 gauge_index = 1; // Gauge index that is defined in gauges configuration of OpenAuto Pro
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message ObdGaugeValueChanged {
+    required int32 gauge_index = 1; // Gauge index that is defined in gauges configuration of OpenAuto Pro
+    required double value = 2;
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message RegisterAudioFocusReceiverRequest {
+    required string name = 1; // Name of the audio focus receiver
+
+    enum AudioStreamCategory {
+        AUDIO_STREAM_CATEGORY_ENTERTAINMENT = 1;
+        AUDIO_STREAM_CATEGORY_COMMUNICATION = 2;
+    }
+    
+    required AudioStreamCategory category = 2;
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message RegisterAudioFocusReceiverResponse {
+    enum RegisterAudioFocusReceiverResult {
+        REGISTER_AUDIO_FOCUS_RECEIVER_RESULT_OK = 1;
+        REGISTER_AUDIO_FOCUS_RECEIVER_RESULT_FAILED = 2;
+    }
+
+    required RegisterAudioFocusReceiverResult result = 1;
+    optional int32 id = 2; // Id of the audio focus receiver generated during registration
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message UnregisterAudioFocusReceiver {
+    required int32 id = 1; // Id of the audio focus receiver generated during registration
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message AudioFocusChangeRequest {
+    enum AudioFocusType {
+        AUDIO_FOCUS_TYPE_GAIN = 1;
+        AUDIO_FOCUS_TYPE_TRANSIENT = 2;
+        AUDIO_FOCUS_TYPE_DUCK = 3;
+        AUDIO_FOCUS_TYPE_RELEASE = 4;
+    }
+
+    required int32 id = 1; // Id of the audio focus receiver generated during registration
+    required AudioFocusType type = 2; // Focus type that client wants to gain
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message AudioFocusChangeResponse {
+    required int32 id = 1; // Id of the audio focus receiver generated during registration
+    required bool result = 2;
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message AudioFocusAction {
+    enum AudioFocusActionType {
+        AUDIO_FOCUS_ACTION_TYPE_SUSPEND = 1;
+        AUDIO_FOCUS_ACTION_TYPE_RESTORE = 2;
+        AUDIO_FOCUS_ACTION_TYPE_LOSS = 3;
+        AUDIO_FOCUS_ACTION_TYPE_DUCK_START = 4;
+        AUDIO_FOCUS_ACTION_TYPE_DUCK_END = 5;
+    }
+
+    enum LostAudioFocusType {
+        LOST_AUDIO_FOCUS_TYPE_GAIN = 1;
+        LOST_AUDIO_FOCUS_TYPE_TRANSIENT = 2;
+        LOST_AUDIO_FOCUS_TYPE_DUCK = 3;
+    }
+
+    required int32 id = 1; // Id of the audio focus receiver generated during registration
+    required AudioFocusActionType action = 2; // Action triggered by another audio focus receiver that needs to be handled by registered audio focus receiver
+    optional LostAudioFocusType lost_type = 3; // Type of the focus that has been lost. Set only when action is AUDIO_FOCUS_ACTION_TYPE_LOSS
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message AudioFocusMediaKey {
+    enum AudioFocusMediaKeyEventType
+    {
+        AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_NONE = 0;
+        AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_PRESS = 1;
+        AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_RELEASE = 2;
+    }
+
+    enum AudioFocusMediaKeyType {
+        AUDIO_FOCUS_MEDIA_KEY_TYPE_NONE = 0;
+        AUDIO_FOCUS_MEDIA_KEY_TYPE_PLAY = 1;
+        AUDIO_FOCUS_MEDIA_KEY_TYPE_PAUSE = 2;
+        AUDIO_FOCUS_MEDIA_KEY_TYPE_PREVIOUS = 3;
+        AUDIO_FOCUS_MEDIA_KEY_TYPE_NEXT = 4;
+        AUDIO_FOCUS_MEDIA_KEY_TYPE_TOGGLE_PLAY = 5;
+    }
+
+    required int32 id = 1; // Id of the audio focus receiver generated during registration
+    required AudioFocusMediaKeyEventType event_type = 2;
+    required AudioFocusMediaKeyType key_type = 3;
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message PhoneConnectionStatus {
+    enum PhoneConnectionState {
+        PHONE_CONNECTION_STATE_CONNECTED = 1;
+        PHONE_CONNECTION_STATE_DISCONNECTED = 2;
+    }
+
+    required PhoneConnectionState state = 1;
+    required string name = 2; // Name of connected phone
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message PhoneVoiceCallStatus {
+    enum PhoneVoiceCallState {
+        PHONE_VOICE_CALL_STATE_NONE = 0;
+        PHONE_VOICE_CALL_STATE_INCOMING = 1;
+        PHONE_VOICE_CALL_STATE_ALERTING = 2;
+        PHONE_VOICE_CALL_STATE_ACTIVE = 3;
+    }
+
+    required PhoneVoiceCallState state = 1;
+    required string caller_id = 2; // Phone number of the contact
+    required string caller_name = 3; // Name of the contact from phonebook
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message PhoneLevelsStatus {
+    required int32 bettery_level_percentage = 1;
+    required int32 signal_level_percentage = 2;
+}
+
+/*
+ * Direction: Client <- OpenAuto Pro
+ */
+message TemperatureStatus {
+    required int32 value = 1; // temperature value in Celcius
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message KeyEvent {
+    enum KeyType {
+        KEY_TYPE_UP = 1;
+        KEY_TYPE_DOWN = 2;
+        KEY_TYPE_LEFT = 3;
+        KEY_TYPE_RIGHT = 4;        
+        KEY_TYPE_SCROLL_LEFT = 5;
+        KEY_TYPE_SCROLL_RIGHT = 6;
+        KEY_TYPE_ENTER = 7;
+        KEY_TYPE_BACK = 8;
+        KEY_TYPE_HOME = 9;
+        KEY_TYPE_ANSWER_CALL = 10;
+        KEY_TYPE_PHONE_MENU = 11;
+        KEY_TYPE_HANGUP_CALL = 12;
+        KEY_TYPE_PLAY = 13;
+        KEY_TYPE_TOGGLE_PLAY = 14;
+        KEY_TYPE_PAUSE = 15;
+        KEY_TYPE_STOP = 16;
+        KEY_TYPE_PREVIOUS_TRACK = 17;
+        KEY_TYPE_NEXT_TRACK = 18;
+        KEY_TYPE_MEDIA_MENU = 19;
+        KEY_TYPE_NAVIGATION_MENU = 20;
+        KEY_TYPE_VOICE_COMMAND = 21;
+        KEY_TYPE_MODE = 22;
+        KEY_TYPE_TOGGLE_NIGHT_MODE = 23;
+        KEY_TYPE_TOGGLE_TOPBAR = 24;
+        KEY_TYPE_TOGGLE_MUTE = 25;
+        KEY_TYPE_VOLUME_UP = 26;
+        KEY_TYPE_VOLUME_DOWN = 27;
+        KEY_TYPE_BRIGHTNESS_UP = 28;
+        KEY_TYPE_BRIGHTNESS_DOWN = 29;
+        KEY_TYPE_BRING_TO_FRONT = 30;
+    }
+
+    required KeyType key_type = 1;
+
+    enum EventType {
+        EVENT_TYPE_PRESS = 1;
+        EVENT_TYPE_RELEASE = 2;
+    }
+
+    required EventType event_type = 2;
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+message SetDayNight {
+    required bool oap_night_mode = 1;
+    required bool android_auto_night_mode = 2;
+}
+
+/*
+ * Direction: Client -> OpenAuto Pro
+ */
+ message InjectTemperatureSensorValue {
+     required int32 value = 1; // Temperature value in Celcius
+ }
