@@ -3,8 +3,9 @@ syntax = "proto2";
 package io.bluewavestudio.openautopro.api;
 
 enum Constants {
+    option allow_alias = true;
     API_MAJOR_VERSION = 1;
-    API_MINOR_VERSION = 0;
+    API_MINOR_VERSION = 1;
 }
 
 enum MessageType {
@@ -12,7 +13,7 @@ enum MessageType {
     MESSAGE_HELLO_REQUEST = 1; // Direction: Client -> OpenAuto Pro
     MESSAGE_HELLO_RESPONSE = 2; // Direction: Client <- OpenAuto Pro
     MESSAGE_SET_STATUS_SUBSCRIPTIONS = 3; // Direction: Client -> OpenAuto Pro
-    MESSAGE_CHANGE_REAR_GEAR_STATUS = 4; // Direction: Client -> OpenAuto Pro
+    MESSAGE_SET_REVERSE_GEAR_STATUS = 4; // Direction: Client -> OpenAuto Pro
     MESSAGE_PROJECTION_STATUS = 5; // Direction: Client <- OpenAuto Pro
     MESSAGE_MEDIA_STATUS = 6; // Direction: Client <- OpenAuto Pro
     MESSAGE_MEDIA_METADATA = 7; // Direction: Client <- OpenAuto Pro
@@ -121,7 +122,7 @@ message SetStatusSubscriptions {
 /*
  * Direction: Client -> OpenAuto Pro
  */
-message ChangeRearGearStatus {
+message SetReverseGearStatus {
     required bool engaged = 1; // Status of the rear gear engagement
 }
 
@@ -156,6 +157,7 @@ message MediaStatus {
         MEDIA_SOURCE_AUTOBOX = 2;
         MEDIA_SOURCE_A2DP = 3;
         MEDIA_SOURCE_STORAGE = 4;
+        MEDIA_SOURCE_FM_RADIO = 5;
     }
 
     required string position_label = 1; // Label of current track position (e. g. 03:19)

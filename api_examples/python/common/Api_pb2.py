@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\tApi.proto\x12!io.bluewavestudio.openautopro.api\"\'\n\x07Version\x12\r\n\x05major\x18\x01 \x02(\x05\x12\r\n\x05minor\x18\x02 \x02(\x05\"]\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x02(\t\x12?\n\x0b\x61pi_version\x18\x02 \x02(\x0b\x32*.io.bluewavestudio.openautopro.api.Version\"\xf2\x02\n\rHelloResponse\x12?\n\x0boap_version\x18\x01 \x02(\x0b\x32*.io.bluewavestudio.openautopro.api.Version\x12?\n\x0b\x61pi_version\x18\x02 \x02(\x0b\x32*.io.bluewavestudio.openautopro.api.Version\x12T\n\x06result\x18\x03 \x02(\x0e\x32\x44.io.bluewavestudio.openautopro.api.HelloResponse.HelloResponseResult\"\x88\x01\n\x13HelloResponseResult\x12\x1c\n\x18HELLO_RESPONSE_RESULT_OK\x10\x01\x12*\n&HELLO_RESPONSE_RESULT_VERSION_MISMATCH\x10\x02\x12\'\n#HELLO_RESPONSE_RESULT_UNKNOWN_ERROR\x10\x03\"\xd7\x01\n\x16SetStatusSubscriptions\x12]\n\rsubscriptions\x18\x01 \x03(\x0e\x32\x46.io.bluewavestudio.openautopro.api.SetStatusSubscriptions.Subscription\"^\n\x0cSubscription\x12\x0e\n\nPROJECTION\x10\x01\x12\t\n\x05MEDIA\x10\x02\x12\x0e\n\nNAVIGATION\x10\x03\x12\x07\n\x03OBD\x10\x04\x12\t\n\x05PHONE\x10\x05\x12\x0f\n\x0bTEMPERATURE\x10\x06\"\'\n\x14\x43hangeRearGearStatus\x12\x0f\n\x07\x65ngaged\x18\x01 \x02(\x08\"\xc5\x03\n\x10ProjectionStatus\x12R\n\x05state\x18\x01 \x02(\x0e\x32\x43.io.bluewavestudio.openautopro.api.ProjectionStatus.ProjectionState\x12T\n\x06source\x18\x02 \x02(\x0e\x32\x44.io.bluewavestudio.openautopro.api.ProjectionStatus.ProjectionSource\"r\n\x0fProjectionState\x12\x1d\n\x19PROJECTION_STATE_INACTIVE\x10\x01\x12\x1f\n\x1bPROJECTION_STATE_FOREGROUND\x10\x02\x12\x1f\n\x1bPROJECTION_STATE_BACKGROUND\x10\x03\"\x92\x01\n\x10ProjectionSource\x12\x1a\n\x16PROJECTION_SOURCE_NONE\x10\x00\x12\"\n\x1ePROJECTION_SOURCE_ANDROID_AUTO\x10\x01\x12\x1d\n\x19PROJECTION_SOURCE_AUTOBOX\x10\x02\x12\x1f\n\x1bPROJECTION_SOURCE_MIRRORING\x10\x03\"\x96\x02\n\x0bMediaStatus\x12\x16\n\x0eposition_label\x18\x01 \x02(\t\x12\x12\n\nis_playing\x18\x02 \x02(\x08\x12J\n\x06source\x18\x03 \x02(\x0e\x32:.io.bluewavestudio.openautopro.api.MediaStatus.MediaSource\"\x8e\x01\n\x0bMediaSource\x12\x15\n\x11MEDIA_SOURCE_NONE\x10\x00\x12\x1d\n\x19MEDIA_SOURCE_ANDROID_AUTO\x10\x01\x12\x18\n\x14MEDIA_SOURCE_AUTOBOX\x10\x02\x12\x15\n\x11MEDIA_SOURCE_A2DP\x10\x03\x12\x18\n\x14MEDIA_SOURCE_STORAGE\x10\x04\"U\n\rMediaMetadata\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x0e\n\x06\x61rtist\x18\x02 \x02(\t\x12\r\n\x05title\x18\x03 \x02(\t\x12\x16\n\x0e\x64uration_label\x18\x04 \x02(\t\"\xdf\x02\n\x10NavigationStatus\x12T\n\x06source\x18\x01 \x02(\x0e\x32\x44.io.bluewavestudio.openautopro.api.NavigationStatus.NavigationSource\x12R\n\x05state\x18\x02 \x02(\x0e\x32\x43.io.bluewavestudio.openautopro.api.NavigationStatus.NavigationState\"R\n\x10NavigationSource\x12\x1a\n\x16NAVIGATION_SOURCE_NONE\x10\x00\x12\"\n\x1eNAVIGATION_SOURCE_ANDROID_AUTO\x10\x01\"M\n\x0fNavigationState\x12\x1b\n\x17NAVIGATION_STATE_ACTIVE\x10\x01\x12\x1d\n\x19NAVIGATION_STATE_INACTIVE\x10\x02\">\n\x19NavigationManeuverDetails\x12\x13\n\x0b\x64\x65scription\x18\x01 \x02(\t\x12\x0c\n\x04icon\x18\x02 \x02(\x0c\"+\n\x1aNavigationManeuverDistance\x12\r\n\x05label\x18\x01 \x02(\t\"L\n\x19RegisterStatusIconRequest\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x02(\t\x12\x0c\n\x04icon\x18\x03 \x02(\x0c\"\xf8\x01\n\x1aRegisterStatusIconResponse\x12\x66\n\x06result\x18\x01 \x02(\x0e\x32V.io.bluewavestudio.openautopro.api.RegisterStatusIconResponse.RegisterStatusIconResult\x12\n\n\x02id\x18\x02 \x01(\x05\"f\n\x18RegisterStatusIconResult\x12\"\n\x1eREGISTER_STATUS_ICON_RESULT_OK\x10\x01\x12&\n\"REGISTER_STATUS_ICON_RESULT_FAILED\x10\x02\"\"\n\x14UnregisterStatusIcon\x12\n\n\x02id\x18\x01 \x02(\x05\"4\n\x15\x43hangeStatusIconState\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x0f\n\x07visible\x18\x02 \x02(\x08\"G\n\"RegisterNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x02(\t\"\xaf\x02\n#RegisterNotificationChannelResponse\x12x\n\x06result\x18\x01 \x02(\x0e\x32h.io.bluewavestudio.openautopro.api.RegisterNotificationChannelResponse.RegisterNotificationChannelResult\x12\n\n\x02id\x18\x02 \x01(\x05\"\x81\x01\n!RegisterNotificationChannelResult\x12+\n\'REGISTER_NOTIFICATION_CHANNEL_RESULT_OK\x10\x01\x12/\n+REGISTER_NOTIFICATION_CHANNEL_RESULT_FAILED\x10\x02\"+\n\x1dUnregisterNotificationChannel\x12\n\n\x02id\x18\x01 \x02(\x05\"\x80\x01\n\x10ShowNotification\x12\x12\n\nchannel_id\x18\x01 \x02(\x05\x12\r\n\x05title\x18\x02 \x02(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x02(\t\x12\x13\n\x0bsingle_line\x18\x04 \x02(\t\x12\x0c\n\x04icon\x18\x05 \x02(\x0c\x12\x11\n\tsound_pcm\x18\x06 \x01(\x0c\"<\n\x1aObdInjectGaugeFormulaValue\x12\x0f\n\x07\x66ormula\x18\x01 \x02(\t\x12\r\n\x05value\x18\x02 \x02(\x01\"\xd0\x01\n\x13ObdConnectionStatus\x12X\n\x05state\x18\x01 \x02(\x0e\x32I.io.bluewavestudio.openautopro.api.ObdConnectionStatus.ObdConnectionState\"_\n\x12ObdConnectionState\x12\"\n\x1eOBD_CONNECTION_STATE_CONNECTED\x10\x01\x12%\n!OBD_CONNECTION_STATE_DISCONNECTED\x10\x02\"5\n\x1eSubscribeObdGaugeChangeRequest\x12\x13\n\x0bgauge_index\x18\x01 \x02(\x05\"\xb3\x03\n\x1fSubscribeObdGaugeChangeResponse\x12p\n\x06result\x18\x01 \x02(\x0e\x32`.io.bluewavestudio.openautopro.api.SubscribeObdGaugeChangeResponse.SubscribeObdGaugeChangeResult\x12\x13\n\x0bgauge_index\x18\x02 \x01(\x05\x12\r\n\x05label\x18\x03 \x01(\t\x12\x11\n\tmin_value\x18\x04 \x01(\x01\x12\x11\n\tmax_value\x18\x05 \x01(\x01\x12\r\n\x05limit\x18\x06 \x01(\x01\x12\x11\n\tprecision\x18\x07 \x01(\x05\"\xb1\x01\n\x1dSubscribeObdGaugeChangeResult\x12(\n$SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_OK\x10\x01\x12\x38\n4SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_ALREADY_SUBSCRIBED\x10\x02\x12,\n(SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_FAILED\x10\x03\"0\n\x19UnsubscribeObdGaugeChange\x12\x13\n\x0bgauge_index\x18\x01 \x02(\x05\":\n\x14ObdGaugeValueChanged\x12\x13\n\x0bgauge_index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x02(\x01\"\x86\x02\n!RegisterAudioFocusReceiverRequest\x12\x0c\n\x04name\x18\x01 \x02(\t\x12j\n\x08\x63\x61tegory\x18\x02 \x02(\x0e\x32X.io.bluewavestudio.openautopro.api.RegisterAudioFocusReceiverRequest.AudioStreamCategory\"g\n\x13\x41udioStreamCategory\x12\'\n#AUDIO_STREAM_CATEGORY_ENTERTAINMENT\x10\x01\x12\'\n#AUDIO_STREAM_CATEGORY_COMMUNICATION\x10\x02\"\xab\x02\n\"RegisterAudioFocusReceiverResponse\x12v\n\x06result\x18\x01 \x02(\x0e\x32\x66.io.bluewavestudio.openautopro.api.RegisterAudioFocusReceiverResponse.RegisterAudioFocusReceiverResult\x12\n\n\x02id\x18\x02 \x01(\x05\"\x80\x01\n RegisterAudioFocusReceiverResult\x12+\n\'REGISTER_AUDIO_FOCUS_RECEIVER_RESULT_OK\x10\x01\x12/\n+REGISTER_AUDIO_FOCUS_RECEIVER_RESULT_FAILED\x10\x02\"*\n\x1cUnregisterAudioFocusReceiver\x12\n\n\x02id\x18\x01 \x02(\x05\"\x85\x02\n\x17\x41udioFocusChangeRequest\x12\n\n\x02id\x18\x01 \x02(\x05\x12W\n\x04type\x18\x02 \x02(\x0e\x32I.io.bluewavestudio.openautopro.api.AudioFocusChangeRequest.AudioFocusType\"\x84\x01\n\x0e\x41udioFocusType\x12\x19\n\x15\x41UDIO_FOCUS_TYPE_GAIN\x10\x01\x12\x1e\n\x1a\x41UDIO_FOCUS_TYPE_TRANSIENT\x10\x02\x12\x19\n\x15\x41UDIO_FOCUS_TYPE_DUCK\x10\x03\x12\x1c\n\x18\x41UDIO_FOCUS_TYPE_RELEASE\x10\x04\"6\n\x18\x41udioFocusChangeResponse\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x0e\n\x06result\x18\x02 \x02(\x08\"\xa1\x04\n\x10\x41udioFocusAction\x12\n\n\x02id\x18\x01 \x02(\x05\x12X\n\x06\x61\x63tion\x18\x02 \x02(\x0e\x32H.io.bluewavestudio.openautopro.api.AudioFocusAction.AudioFocusActionType\x12Y\n\tlost_type\x18\x03 \x01(\x0e\x32\x46.io.bluewavestudio.openautopro.api.AudioFocusAction.LostAudioFocusType\"\xd0\x01\n\x14\x41udioFocusActionType\x12#\n\x1f\x41UDIO_FOCUS_ACTION_TYPE_SUSPEND\x10\x01\x12#\n\x1f\x41UDIO_FOCUS_ACTION_TYPE_RESTORE\x10\x02\x12 \n\x1c\x41UDIO_FOCUS_ACTION_TYPE_LOSS\x10\x03\x12&\n\"AUDIO_FOCUS_ACTION_TYPE_DUCK_START\x10\x04\x12$\n AUDIO_FOCUS_ACTION_TYPE_DUCK_END\x10\x05\"y\n\x12LostAudioFocusType\x12\x1e\n\x1aLOST_AUDIO_FOCUS_TYPE_GAIN\x10\x01\x12#\n\x1fLOST_AUDIO_FOCUS_TYPE_TRANSIENT\x10\x02\x12\x1e\n\x1aLOST_AUDIO_FOCUS_TYPE_DUCK\x10\x03\"\x91\x05\n\x12\x41udioFocusMediaKey\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x65\n\nevent_type\x18\x02 \x02(\x0e\x32Q.io.bluewavestudio.openautopro.api.AudioFocusMediaKey.AudioFocusMediaKeyEventType\x12^\n\x08key_type\x18\x03 \x02(\x0e\x32L.io.bluewavestudio.openautopro.api.AudioFocusMediaKey.AudioFocusMediaKeyType\"\xa2\x01\n\x1b\x41udioFocusMediaKeyEventType\x12)\n%AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_NONE\x10\x00\x12*\n&AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_PRESS\x10\x01\x12,\n(AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_RELEASE\x10\x02\"\x82\x02\n\x16\x41udioFocusMediaKeyType\x12#\n\x1f\x41UDIO_FOCUS_MEDIA_KEY_TYPE_NONE\x10\x00\x12#\n\x1f\x41UDIO_FOCUS_MEDIA_KEY_TYPE_PLAY\x10\x01\x12$\n AUDIO_FOCUS_MEDIA_KEY_TYPE_PAUSE\x10\x02\x12\'\n#AUDIO_FOCUS_MEDIA_KEY_TYPE_PREVIOUS\x10\x03\x12#\n\x1f\x41UDIO_FOCUS_MEDIA_KEY_TYPE_NEXT\x10\x04\x12*\n&AUDIO_FOCUS_MEDIA_KEY_TYPE_TOGGLE_PLAY\x10\x05\"\xea\x01\n\x15PhoneConnectionStatus\x12\\\n\x05state\x18\x01 \x02(\x0e\x32M.io.bluewavestudio.openautopro.api.PhoneConnectionStatus.PhoneConnectionState\x12\x0c\n\x04name\x18\x02 \x02(\t\"e\n\x14PhoneConnectionState\x12$\n PHONE_CONNECTION_STATE_CONNECTED\x10\x01\x12\'\n#PHONE_CONNECTION_STATE_DISCONNECTED\x10\x02\"\xc0\x02\n\x14PhoneVoiceCallStatus\x12Z\n\x05state\x18\x01 \x02(\x0e\x32K.io.bluewavestudio.openautopro.api.PhoneVoiceCallStatus.PhoneVoiceCallState\x12\x11\n\tcaller_id\x18\x02 \x02(\t\x12\x13\n\x0b\x63\x61ller_name\x18\x03 \x02(\t\"\xa3\x01\n\x13PhoneVoiceCallState\x12\x1f\n\x1bPHONE_VOICE_CALL_STATE_NONE\x10\x00\x12#\n\x1fPHONE_VOICE_CALL_STATE_INCOMING\x10\x01\x12#\n\x1fPHONE_VOICE_CALL_STATE_ALERTING\x10\x02\x12!\n\x1dPHONE_VOICE_CALL_STATE_ACTIVE\x10\x03\"V\n\x11PhoneLevelsStatus\x12 \n\x18\x62\x65ttery_level_percentage\x18\x01 \x02(\x05\x12\x1f\n\x17signal_level_percentage\x18\x02 \x02(\x05\"\"\n\x11TemperatureStatus\x12\r\n\x05value\x18\x01 \x02(\x05\"\xb9\x07\n\x08KeyEvent\x12\x45\n\x08key_type\x18\x01 \x02(\x0e\x32\x33.io.bluewavestudio.openautopro.api.KeyEvent.KeyType\x12I\n\nevent_type\x18\x02 \x02(\x0e\x32\x35.io.bluewavestudio.openautopro.api.KeyEvent.EventType\"\xdf\x05\n\x07KeyType\x12\x0f\n\x0bKEY_TYPE_UP\x10\x01\x12\x11\n\rKEY_TYPE_DOWN\x10\x02\x12\x11\n\rKEY_TYPE_LEFT\x10\x03\x12\x12\n\x0eKEY_TYPE_RIGHT\x10\x04\x12\x18\n\x14KEY_TYPE_SCROLL_LEFT\x10\x05\x12\x19\n\x15KEY_TYPE_SCROLL_RIGHT\x10\x06\x12\x12\n\x0eKEY_TYPE_ENTER\x10\x07\x12\x11\n\rKEY_TYPE_BACK\x10\x08\x12\x11\n\rKEY_TYPE_HOME\x10\t\x12\x18\n\x14KEY_TYPE_ANSWER_CALL\x10\n\x12\x17\n\x13KEY_TYPE_PHONE_MENU\x10\x0b\x12\x18\n\x14KEY_TYPE_HANGUP_CALL\x10\x0c\x12\x11\n\rKEY_TYPE_PLAY\x10\r\x12\x18\n\x14KEY_TYPE_TOGGLE_PLAY\x10\x0e\x12\x12\n\x0eKEY_TYPE_PAUSE\x10\x0f\x12\x11\n\rKEY_TYPE_STOP\x10\x10\x12\x1b\n\x17KEY_TYPE_PREVIOUS_TRACK\x10\x11\x12\x17\n\x13KEY_TYPE_NEXT_TRACK\x10\x12\x12\x17\n\x13KEY_TYPE_MEDIA_MENU\x10\x13\x12\x1c\n\x18KEY_TYPE_NAVIGATION_MENU\x10\x14\x12\x1a\n\x16KEY_TYPE_VOICE_COMMAND\x10\x15\x12\x11\n\rKEY_TYPE_MODE\x10\x16\x12\x1e\n\x1aKEY_TYPE_TOGGLE_NIGHT_MODE\x10\x17\x12\x1a\n\x16KEY_TYPE_TOGGLE_TOPBAR\x10\x18\x12\x18\n\x14KEY_TYPE_TOGGLE_MUTE\x10\x19\x12\x16\n\x12KEY_TYPE_VOLUME_UP\x10\x1a\x12\x18\n\x14KEY_TYPE_VOLUME_DOWN\x10\x1b\x12\x1a\n\x16KEY_TYPE_BRIGHTNESS_UP\x10\x1c\x12\x1c\n\x18KEY_TYPE_BRIGHTNESS_DOWN\x10\x1d\x12\x1b\n\x17KEY_TYPE_BRING_TO_FRONT\x10\x1e\"9\n\tEventType\x12\x14\n\x10\x45VENT_TYPE_PRESS\x10\x01\x12\x16\n\x12\x45VENT_TYPE_RELEASE\x10\x02\"F\n\x0bSetDayNight\x12\x16\n\x0eoap_night_mode\x18\x01 \x02(\x08\x12\x1f\n\x17\x61ndroid_auto_night_mode\x18\x02 \x02(\x08\"-\n\x1cInjectTemperatureSensorValue\x12\r\n\x05value\x18\x01 \x02(\x05*9\n\tConstants\x12\x15\n\x11\x41PI_MAJOR_VERSION\x10\x01\x12\x15\n\x11\x41PI_MINOR_VERSION\x10\x00*\x89\x0c\n\x0bMessageType\x12\x16\n\x12MESSAGE_INVALID_ID\x10\x00\x12\x19\n\x15MESSAGE_HELLO_REQUEST\x10\x01\x12\x1a\n\x16MESSAGE_HELLO_RESPONSE\x10\x02\x12$\n MESSAGE_SET_STATUS_SUBSCRIPTIONS\x10\x03\x12#\n\x1fMESSAGE_CHANGE_REAR_GEAR_STATUS\x10\x04\x12\x1d\n\x19MESSAGE_PROJECTION_STATUS\x10\x05\x12\x18\n\x14MESSAGE_MEDIA_STATUS\x10\x06\x12\x1a\n\x16MESSAGE_MEDIA_METADATA\x10\x07\x12\x1d\n\x19MESSAGE_NAVIGATION_STATUS\x10\x08\x12\'\n#MESSAGE_NAVIGATION_MANEUVER_DETAILS\x10\t\x12(\n$MESSAGE_NAVIGATION_MANEUVER_DISTANCE\x10\n\x12(\n$MESSAGE_REGISTER_STATUS_ICON_REQUEST\x10\x0b\x12)\n%MESSAGE_REGISTER_STATUS_ICON_RESPONSE\x10\x0c\x12\"\n\x1eMESSAGE_UNREGISTER_STATUS_ICON\x10\r\x12$\n MESSAGE_CHANGE_STATUS_ICON_STATE\x10\x0e\x12\x31\n-MESSAGE_REGISTER_NOTIFICATION_CHANNEL_REQUEST\x10\x0f\x12\x32\n.MESSAGE_REGISTER_NOTIFICATION_CHANNEL_RESPONSE\x10\x10\x12+\n\'MESSAGE_UNREGISTER_NOTIFICATION_CHANNEL\x10\x11\x12\x1d\n\x19MESSAGE_SHOW_NOTIFICATION\x10\x12\x12!\n\x1dMESSAGE_OBD_CONNECTION_STATUS\x10\x13\x12.\n*MESSAGE_SUBSCRIBE_OBD_GAUGE_CHANGE_REQUEST\x10\x14\x12/\n+MESSAGE_SUBSCRIBE_OBD_GAUGE_CHANGE_RESPONSE\x10\x15\x12(\n$MESSAGE_UNSUBSCRIBE_OBD_GAUGE_CHANGE\x10\x16\x12#\n\x1fMESSAGE_OBD_GAUGE_VALUE_CHANGED\x10\x17\x12*\n&MESSAGE_OBD_INJECT_GAUGE_FORMULA_VALUE\x10\x18\x12\x31\n-MESSAGE_REGISTER_AUDIO_FOCUS_RECEIVER_REQUEST\x10\x19\x12\x32\n.MESSAGE_REGISTER_AUDIO_FOCUS_RECEIVER_RESPONSE\x10\x1a\x12+\n\'MESSAGE_UNREGISTER_AUDIO_FOCUS_RECEIVER\x10\x1b\x12&\n\"MESSAGE_AUDIO_FOCUS_CHANGE_REQUEST\x10\x1c\x12\'\n#MESSAGE_AUDIO_FOCUS_CHANGE_RESPONSE\x10\x1d\x12\x1e\n\x1aMESSAGE_AUDIO_FOCUS_ACTION\x10\x1e\x12!\n\x1dMESSAGE_AUDIO_FOCUS_MEDIA_KEY\x10\x1f\x12#\n\x1fMESSAGE_PHONE_CONNECTION_STATUS\x10 \x12#\n\x1fMESSAGE_PHONE_VOICE_CALL_STATUS\x10!\x12\x1f\n\x1bMESSAGE_PHONE_LEVELS_STATUS\x10\"\x12\x1e\n\x1aMESSAGE_TEMPERATURE_STATUS\x10#\x12\x15\n\x11MESSAGE_KEY_EVENT\x10$\x12+\n\'MESSAGE_INJECT_TEMPERATURE_SENSOR_VALUE\x10%\x12\x19\n\x15MESSAGE_SET_DAY_NIGHT\x10&\x12\x10\n\x0cMESSAGE_PING\x10\'\x12\x10\n\x0cMESSAGE_PONG\x10(\x12\x12\n\x0eMESSAGE_BYEBYE\x10)'
+  serialized_pb=b'\n\tApi.proto\x12!io.bluewavestudio.openautopro.api\"\'\n\x07Version\x12\r\n\x05major\x18\x01 \x02(\x05\x12\r\n\x05minor\x18\x02 \x02(\x05\"]\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x02(\t\x12?\n\x0b\x61pi_version\x18\x02 \x02(\x0b\x32*.io.bluewavestudio.openautopro.api.Version\"\xf2\x02\n\rHelloResponse\x12?\n\x0boap_version\x18\x01 \x02(\x0b\x32*.io.bluewavestudio.openautopro.api.Version\x12?\n\x0b\x61pi_version\x18\x02 \x02(\x0b\x32*.io.bluewavestudio.openautopro.api.Version\x12T\n\x06result\x18\x03 \x02(\x0e\x32\x44.io.bluewavestudio.openautopro.api.HelloResponse.HelloResponseResult\"\x88\x01\n\x13HelloResponseResult\x12\x1c\n\x18HELLO_RESPONSE_RESULT_OK\x10\x01\x12*\n&HELLO_RESPONSE_RESULT_VERSION_MISMATCH\x10\x02\x12\'\n#HELLO_RESPONSE_RESULT_UNKNOWN_ERROR\x10\x03\"\xd7\x01\n\x16SetStatusSubscriptions\x12]\n\rsubscriptions\x18\x01 \x03(\x0e\x32\x46.io.bluewavestudio.openautopro.api.SetStatusSubscriptions.Subscription\"^\n\x0cSubscription\x12\x0e\n\nPROJECTION\x10\x01\x12\t\n\x05MEDIA\x10\x02\x12\x0e\n\nNAVIGATION\x10\x03\x12\x07\n\x03OBD\x10\x04\x12\t\n\x05PHONE\x10\x05\x12\x0f\n\x0bTEMPERATURE\x10\x06\"\'\n\x14SetReverseGearStatus\x12\x0f\n\x07\x65ngaged\x18\x01 \x02(\x08\"\xc5\x03\n\x10ProjectionStatus\x12R\n\x05state\x18\x01 \x02(\x0e\x32\x43.io.bluewavestudio.openautopro.api.ProjectionStatus.ProjectionState\x12T\n\x06source\x18\x02 \x02(\x0e\x32\x44.io.bluewavestudio.openautopro.api.ProjectionStatus.ProjectionSource\"r\n\x0fProjectionState\x12\x1d\n\x19PROJECTION_STATE_INACTIVE\x10\x01\x12\x1f\n\x1bPROJECTION_STATE_FOREGROUND\x10\x02\x12\x1f\n\x1bPROJECTION_STATE_BACKGROUND\x10\x03\"\x92\x01\n\x10ProjectionSource\x12\x1a\n\x16PROJECTION_SOURCE_NONE\x10\x00\x12\"\n\x1ePROJECTION_SOURCE_ANDROID_AUTO\x10\x01\x12\x1d\n\x19PROJECTION_SOURCE_AUTOBOX\x10\x02\x12\x1f\n\x1bPROJECTION_SOURCE_MIRRORING\x10\x03\"\xb1\x02\n\x0bMediaStatus\x12\x16\n\x0eposition_label\x18\x01 \x02(\t\x12\x12\n\nis_playing\x18\x02 \x02(\x08\x12J\n\x06source\x18\x03 \x02(\x0e\x32:.io.bluewavestudio.openautopro.api.MediaStatus.MediaSource\"\xa9\x01\n\x0bMediaSource\x12\x15\n\x11MEDIA_SOURCE_NONE\x10\x00\x12\x1d\n\x19MEDIA_SOURCE_ANDROID_AUTO\x10\x01\x12\x18\n\x14MEDIA_SOURCE_AUTOBOX\x10\x02\x12\x15\n\x11MEDIA_SOURCE_A2DP\x10\x03\x12\x18\n\x14MEDIA_SOURCE_STORAGE\x10\x04\x12\x19\n\x15MEDIA_SOURCE_FM_RADIO\x10\x05\"U\n\rMediaMetadata\x12\r\n\x05\x61lbum\x18\x01 \x02(\t\x12\x0e\n\x06\x61rtist\x18\x02 \x02(\t\x12\r\n\x05title\x18\x03 \x02(\t\x12\x16\n\x0e\x64uration_label\x18\x04 \x02(\t\"\xdf\x02\n\x10NavigationStatus\x12T\n\x06source\x18\x01 \x02(\x0e\x32\x44.io.bluewavestudio.openautopro.api.NavigationStatus.NavigationSource\x12R\n\x05state\x18\x02 \x02(\x0e\x32\x43.io.bluewavestudio.openautopro.api.NavigationStatus.NavigationState\"R\n\x10NavigationSource\x12\x1a\n\x16NAVIGATION_SOURCE_NONE\x10\x00\x12\"\n\x1eNAVIGATION_SOURCE_ANDROID_AUTO\x10\x01\"M\n\x0fNavigationState\x12\x1b\n\x17NAVIGATION_STATE_ACTIVE\x10\x01\x12\x1d\n\x19NAVIGATION_STATE_INACTIVE\x10\x02\">\n\x19NavigationManeuverDetails\x12\x13\n\x0b\x64\x65scription\x18\x01 \x02(\t\x12\x0c\n\x04icon\x18\x02 \x02(\x0c\"+\n\x1aNavigationManeuverDistance\x12\r\n\x05label\x18\x01 \x02(\t\"L\n\x19RegisterStatusIconRequest\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x02(\t\x12\x0c\n\x04icon\x18\x03 \x02(\x0c\"\xf8\x01\n\x1aRegisterStatusIconResponse\x12\x66\n\x06result\x18\x01 \x02(\x0e\x32V.io.bluewavestudio.openautopro.api.RegisterStatusIconResponse.RegisterStatusIconResult\x12\n\n\x02id\x18\x02 \x01(\x05\"f\n\x18RegisterStatusIconResult\x12\"\n\x1eREGISTER_STATUS_ICON_RESULT_OK\x10\x01\x12&\n\"REGISTER_STATUS_ICON_RESULT_FAILED\x10\x02\"\"\n\x14UnregisterStatusIcon\x12\n\n\x02id\x18\x01 \x02(\x05\"4\n\x15\x43hangeStatusIconState\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x0f\n\x07visible\x18\x02 \x02(\x08\"G\n\"RegisterNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x02(\t\"\xaf\x02\n#RegisterNotificationChannelResponse\x12x\n\x06result\x18\x01 \x02(\x0e\x32h.io.bluewavestudio.openautopro.api.RegisterNotificationChannelResponse.RegisterNotificationChannelResult\x12\n\n\x02id\x18\x02 \x01(\x05\"\x81\x01\n!RegisterNotificationChannelResult\x12+\n\'REGISTER_NOTIFICATION_CHANNEL_RESULT_OK\x10\x01\x12/\n+REGISTER_NOTIFICATION_CHANNEL_RESULT_FAILED\x10\x02\"+\n\x1dUnregisterNotificationChannel\x12\n\n\x02id\x18\x01 \x02(\x05\"\x80\x01\n\x10ShowNotification\x12\x12\n\nchannel_id\x18\x01 \x02(\x05\x12\r\n\x05title\x18\x02 \x02(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x02(\t\x12\x13\n\x0bsingle_line\x18\x04 \x02(\t\x12\x0c\n\x04icon\x18\x05 \x02(\x0c\x12\x11\n\tsound_pcm\x18\x06 \x01(\x0c\"<\n\x1aObdInjectGaugeFormulaValue\x12\x0f\n\x07\x66ormula\x18\x01 \x02(\t\x12\r\n\x05value\x18\x02 \x02(\x01\"\xd0\x01\n\x13ObdConnectionStatus\x12X\n\x05state\x18\x01 \x02(\x0e\x32I.io.bluewavestudio.openautopro.api.ObdConnectionStatus.ObdConnectionState\"_\n\x12ObdConnectionState\x12\"\n\x1eOBD_CONNECTION_STATE_CONNECTED\x10\x01\x12%\n!OBD_CONNECTION_STATE_DISCONNECTED\x10\x02\"5\n\x1eSubscribeObdGaugeChangeRequest\x12\x13\n\x0bgauge_index\x18\x01 \x02(\x05\"\xb3\x03\n\x1fSubscribeObdGaugeChangeResponse\x12p\n\x06result\x18\x01 \x02(\x0e\x32`.io.bluewavestudio.openautopro.api.SubscribeObdGaugeChangeResponse.SubscribeObdGaugeChangeResult\x12\x13\n\x0bgauge_index\x18\x02 \x01(\x05\x12\r\n\x05label\x18\x03 \x01(\t\x12\x11\n\tmin_value\x18\x04 \x01(\x01\x12\x11\n\tmax_value\x18\x05 \x01(\x01\x12\r\n\x05limit\x18\x06 \x01(\x01\x12\x11\n\tprecision\x18\x07 \x01(\x05\"\xb1\x01\n\x1dSubscribeObdGaugeChangeResult\x12(\n$SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_OK\x10\x01\x12\x38\n4SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_ALREADY_SUBSCRIBED\x10\x02\x12,\n(SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_FAILED\x10\x03\"0\n\x19UnsubscribeObdGaugeChange\x12\x13\n\x0bgauge_index\x18\x01 \x02(\x05\":\n\x14ObdGaugeValueChanged\x12\x13\n\x0bgauge_index\x18\x01 \x02(\x05\x12\r\n\x05value\x18\x02 \x02(\x01\"\x86\x02\n!RegisterAudioFocusReceiverRequest\x12\x0c\n\x04name\x18\x01 \x02(\t\x12j\n\x08\x63\x61tegory\x18\x02 \x02(\x0e\x32X.io.bluewavestudio.openautopro.api.RegisterAudioFocusReceiverRequest.AudioStreamCategory\"g\n\x13\x41udioStreamCategory\x12\'\n#AUDIO_STREAM_CATEGORY_ENTERTAINMENT\x10\x01\x12\'\n#AUDIO_STREAM_CATEGORY_COMMUNICATION\x10\x02\"\xab\x02\n\"RegisterAudioFocusReceiverResponse\x12v\n\x06result\x18\x01 \x02(\x0e\x32\x66.io.bluewavestudio.openautopro.api.RegisterAudioFocusReceiverResponse.RegisterAudioFocusReceiverResult\x12\n\n\x02id\x18\x02 \x01(\x05\"\x80\x01\n RegisterAudioFocusReceiverResult\x12+\n\'REGISTER_AUDIO_FOCUS_RECEIVER_RESULT_OK\x10\x01\x12/\n+REGISTER_AUDIO_FOCUS_RECEIVER_RESULT_FAILED\x10\x02\"*\n\x1cUnregisterAudioFocusReceiver\x12\n\n\x02id\x18\x01 \x02(\x05\"\x85\x02\n\x17\x41udioFocusChangeRequest\x12\n\n\x02id\x18\x01 \x02(\x05\x12W\n\x04type\x18\x02 \x02(\x0e\x32I.io.bluewavestudio.openautopro.api.AudioFocusChangeRequest.AudioFocusType\"\x84\x01\n\x0e\x41udioFocusType\x12\x19\n\x15\x41UDIO_FOCUS_TYPE_GAIN\x10\x01\x12\x1e\n\x1a\x41UDIO_FOCUS_TYPE_TRANSIENT\x10\x02\x12\x19\n\x15\x41UDIO_FOCUS_TYPE_DUCK\x10\x03\x12\x1c\n\x18\x41UDIO_FOCUS_TYPE_RELEASE\x10\x04\"6\n\x18\x41udioFocusChangeResponse\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x0e\n\x06result\x18\x02 \x02(\x08\"\xa1\x04\n\x10\x41udioFocusAction\x12\n\n\x02id\x18\x01 \x02(\x05\x12X\n\x06\x61\x63tion\x18\x02 \x02(\x0e\x32H.io.bluewavestudio.openautopro.api.AudioFocusAction.AudioFocusActionType\x12Y\n\tlost_type\x18\x03 \x01(\x0e\x32\x46.io.bluewavestudio.openautopro.api.AudioFocusAction.LostAudioFocusType\"\xd0\x01\n\x14\x41udioFocusActionType\x12#\n\x1f\x41UDIO_FOCUS_ACTION_TYPE_SUSPEND\x10\x01\x12#\n\x1f\x41UDIO_FOCUS_ACTION_TYPE_RESTORE\x10\x02\x12 \n\x1c\x41UDIO_FOCUS_ACTION_TYPE_LOSS\x10\x03\x12&\n\"AUDIO_FOCUS_ACTION_TYPE_DUCK_START\x10\x04\x12$\n AUDIO_FOCUS_ACTION_TYPE_DUCK_END\x10\x05\"y\n\x12LostAudioFocusType\x12\x1e\n\x1aLOST_AUDIO_FOCUS_TYPE_GAIN\x10\x01\x12#\n\x1fLOST_AUDIO_FOCUS_TYPE_TRANSIENT\x10\x02\x12\x1e\n\x1aLOST_AUDIO_FOCUS_TYPE_DUCK\x10\x03\"\x91\x05\n\x12\x41udioFocusMediaKey\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x65\n\nevent_type\x18\x02 \x02(\x0e\x32Q.io.bluewavestudio.openautopro.api.AudioFocusMediaKey.AudioFocusMediaKeyEventType\x12^\n\x08key_type\x18\x03 \x02(\x0e\x32L.io.bluewavestudio.openautopro.api.AudioFocusMediaKey.AudioFocusMediaKeyType\"\xa2\x01\n\x1b\x41udioFocusMediaKeyEventType\x12)\n%AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_NONE\x10\x00\x12*\n&AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_PRESS\x10\x01\x12,\n(AUDIO_FOCUS_MEDIA_KEY_EVENT_TYPE_RELEASE\x10\x02\"\x82\x02\n\x16\x41udioFocusMediaKeyType\x12#\n\x1f\x41UDIO_FOCUS_MEDIA_KEY_TYPE_NONE\x10\x00\x12#\n\x1f\x41UDIO_FOCUS_MEDIA_KEY_TYPE_PLAY\x10\x01\x12$\n AUDIO_FOCUS_MEDIA_KEY_TYPE_PAUSE\x10\x02\x12\'\n#AUDIO_FOCUS_MEDIA_KEY_TYPE_PREVIOUS\x10\x03\x12#\n\x1f\x41UDIO_FOCUS_MEDIA_KEY_TYPE_NEXT\x10\x04\x12*\n&AUDIO_FOCUS_MEDIA_KEY_TYPE_TOGGLE_PLAY\x10\x05\"\xea\x01\n\x15PhoneConnectionStatus\x12\\\n\x05state\x18\x01 \x02(\x0e\x32M.io.bluewavestudio.openautopro.api.PhoneConnectionStatus.PhoneConnectionState\x12\x0c\n\x04name\x18\x02 \x02(\t\"e\n\x14PhoneConnectionState\x12$\n PHONE_CONNECTION_STATE_CONNECTED\x10\x01\x12\'\n#PHONE_CONNECTION_STATE_DISCONNECTED\x10\x02\"\xc0\x02\n\x14PhoneVoiceCallStatus\x12Z\n\x05state\x18\x01 \x02(\x0e\x32K.io.bluewavestudio.openautopro.api.PhoneVoiceCallStatus.PhoneVoiceCallState\x12\x11\n\tcaller_id\x18\x02 \x02(\t\x12\x13\n\x0b\x63\x61ller_name\x18\x03 \x02(\t\"\xa3\x01\n\x13PhoneVoiceCallState\x12\x1f\n\x1bPHONE_VOICE_CALL_STATE_NONE\x10\x00\x12#\n\x1fPHONE_VOICE_CALL_STATE_INCOMING\x10\x01\x12#\n\x1fPHONE_VOICE_CALL_STATE_ALERTING\x10\x02\x12!\n\x1dPHONE_VOICE_CALL_STATE_ACTIVE\x10\x03\"V\n\x11PhoneLevelsStatus\x12 \n\x18\x62\x65ttery_level_percentage\x18\x01 \x02(\x05\x12\x1f\n\x17signal_level_percentage\x18\x02 \x02(\x05\"\"\n\x11TemperatureStatus\x12\r\n\x05value\x18\x01 \x02(\x05\"\xb9\x07\n\x08KeyEvent\x12\x45\n\x08key_type\x18\x01 \x02(\x0e\x32\x33.io.bluewavestudio.openautopro.api.KeyEvent.KeyType\x12I\n\nevent_type\x18\x02 \x02(\x0e\x32\x35.io.bluewavestudio.openautopro.api.KeyEvent.EventType\"\xdf\x05\n\x07KeyType\x12\x0f\n\x0bKEY_TYPE_UP\x10\x01\x12\x11\n\rKEY_TYPE_DOWN\x10\x02\x12\x11\n\rKEY_TYPE_LEFT\x10\x03\x12\x12\n\x0eKEY_TYPE_RIGHT\x10\x04\x12\x18\n\x14KEY_TYPE_SCROLL_LEFT\x10\x05\x12\x19\n\x15KEY_TYPE_SCROLL_RIGHT\x10\x06\x12\x12\n\x0eKEY_TYPE_ENTER\x10\x07\x12\x11\n\rKEY_TYPE_BACK\x10\x08\x12\x11\n\rKEY_TYPE_HOME\x10\t\x12\x18\n\x14KEY_TYPE_ANSWER_CALL\x10\n\x12\x17\n\x13KEY_TYPE_PHONE_MENU\x10\x0b\x12\x18\n\x14KEY_TYPE_HANGUP_CALL\x10\x0c\x12\x11\n\rKEY_TYPE_PLAY\x10\r\x12\x18\n\x14KEY_TYPE_TOGGLE_PLAY\x10\x0e\x12\x12\n\x0eKEY_TYPE_PAUSE\x10\x0f\x12\x11\n\rKEY_TYPE_STOP\x10\x10\x12\x1b\n\x17KEY_TYPE_PREVIOUS_TRACK\x10\x11\x12\x17\n\x13KEY_TYPE_NEXT_TRACK\x10\x12\x12\x17\n\x13KEY_TYPE_MEDIA_MENU\x10\x13\x12\x1c\n\x18KEY_TYPE_NAVIGATION_MENU\x10\x14\x12\x1a\n\x16KEY_TYPE_VOICE_COMMAND\x10\x15\x12\x11\n\rKEY_TYPE_MODE\x10\x16\x12\x1e\n\x1aKEY_TYPE_TOGGLE_NIGHT_MODE\x10\x17\x12\x1a\n\x16KEY_TYPE_TOGGLE_TOPBAR\x10\x18\x12\x18\n\x14KEY_TYPE_TOGGLE_MUTE\x10\x19\x12\x16\n\x12KEY_TYPE_VOLUME_UP\x10\x1a\x12\x18\n\x14KEY_TYPE_VOLUME_DOWN\x10\x1b\x12\x1a\n\x16KEY_TYPE_BRIGHTNESS_UP\x10\x1c\x12\x1c\n\x18KEY_TYPE_BRIGHTNESS_DOWN\x10\x1d\x12\x1b\n\x17KEY_TYPE_BRING_TO_FRONT\x10\x1e\"9\n\tEventType\x12\x14\n\x10\x45VENT_TYPE_PRESS\x10\x01\x12\x16\n\x12\x45VENT_TYPE_RELEASE\x10\x02\"F\n\x0bSetDayNight\x12\x16\n\x0eoap_night_mode\x18\x01 \x02(\x08\x12\x1f\n\x17\x61ndroid_auto_night_mode\x18\x02 \x02(\x08\"-\n\x1cInjectTemperatureSensorValue\x12\r\n\x05value\x18\x01 \x02(\x05*=\n\tConstants\x12\x15\n\x11\x41PI_MAJOR_VERSION\x10\x01\x12\x15\n\x11\x41PI_MINOR_VERSION\x10\x01\x1a\x02\x10\x01*\x89\x0c\n\x0bMessageType\x12\x16\n\x12MESSAGE_INVALID_ID\x10\x00\x12\x19\n\x15MESSAGE_HELLO_REQUEST\x10\x01\x12\x1a\n\x16MESSAGE_HELLO_RESPONSE\x10\x02\x12$\n MESSAGE_SET_STATUS_SUBSCRIPTIONS\x10\x03\x12#\n\x1fMESSAGE_SET_REVERSE_GEAR_STATUS\x10\x04\x12\x1d\n\x19MESSAGE_PROJECTION_STATUS\x10\x05\x12\x18\n\x14MESSAGE_MEDIA_STATUS\x10\x06\x12\x1a\n\x16MESSAGE_MEDIA_METADATA\x10\x07\x12\x1d\n\x19MESSAGE_NAVIGATION_STATUS\x10\x08\x12\'\n#MESSAGE_NAVIGATION_MANEUVER_DETAILS\x10\t\x12(\n$MESSAGE_NAVIGATION_MANEUVER_DISTANCE\x10\n\x12(\n$MESSAGE_REGISTER_STATUS_ICON_REQUEST\x10\x0b\x12)\n%MESSAGE_REGISTER_STATUS_ICON_RESPONSE\x10\x0c\x12\"\n\x1eMESSAGE_UNREGISTER_STATUS_ICON\x10\r\x12$\n MESSAGE_CHANGE_STATUS_ICON_STATE\x10\x0e\x12\x31\n-MESSAGE_REGISTER_NOTIFICATION_CHANNEL_REQUEST\x10\x0f\x12\x32\n.MESSAGE_REGISTER_NOTIFICATION_CHANNEL_RESPONSE\x10\x10\x12+\n\'MESSAGE_UNREGISTER_NOTIFICATION_CHANNEL\x10\x11\x12\x1d\n\x19MESSAGE_SHOW_NOTIFICATION\x10\x12\x12!\n\x1dMESSAGE_OBD_CONNECTION_STATUS\x10\x13\x12.\n*MESSAGE_SUBSCRIBE_OBD_GAUGE_CHANGE_REQUEST\x10\x14\x12/\n+MESSAGE_SUBSCRIBE_OBD_GAUGE_CHANGE_RESPONSE\x10\x15\x12(\n$MESSAGE_UNSUBSCRIBE_OBD_GAUGE_CHANGE\x10\x16\x12#\n\x1fMESSAGE_OBD_GAUGE_VALUE_CHANGED\x10\x17\x12*\n&MESSAGE_OBD_INJECT_GAUGE_FORMULA_VALUE\x10\x18\x12\x31\n-MESSAGE_REGISTER_AUDIO_FOCUS_RECEIVER_REQUEST\x10\x19\x12\x32\n.MESSAGE_REGISTER_AUDIO_FOCUS_RECEIVER_RESPONSE\x10\x1a\x12+\n\'MESSAGE_UNREGISTER_AUDIO_FOCUS_RECEIVER\x10\x1b\x12&\n\"MESSAGE_AUDIO_FOCUS_CHANGE_REQUEST\x10\x1c\x12\'\n#MESSAGE_AUDIO_FOCUS_CHANGE_RESPONSE\x10\x1d\x12\x1e\n\x1aMESSAGE_AUDIO_FOCUS_ACTION\x10\x1e\x12!\n\x1dMESSAGE_AUDIO_FOCUS_MEDIA_KEY\x10\x1f\x12#\n\x1fMESSAGE_PHONE_CONNECTION_STATUS\x10 \x12#\n\x1fMESSAGE_PHONE_VOICE_CALL_STATUS\x10!\x12\x1f\n\x1bMESSAGE_PHONE_LEVELS_STATUS\x10\"\x12\x1e\n\x1aMESSAGE_TEMPERATURE_STATUS\x10#\x12\x15\n\x11MESSAGE_KEY_EVENT\x10$\x12+\n\'MESSAGE_INJECT_TEMPERATURE_SENSOR_VALUE\x10%\x12\x19\n\x15MESSAGE_SET_DAY_NIGHT\x10&\x12\x10\n\x0cMESSAGE_PING\x10\'\x12\x10\n\x0cMESSAGE_PONG\x10(\x12\x12\n\x0eMESSAGE_BYEBYE\x10)'
 )
 
 _CONSTANTS = _descriptor.EnumDescriptor(
@@ -36,15 +36,15 @@ _CONSTANTS = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='API_MINOR_VERSION', index=1, number=0,
+      name='API_MINOR_VERSION', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
-  serialized_options=None,
-  serialized_start=7851,
-  serialized_end=7908,
+  serialized_options=b'\020\001',
+  serialized_start=7878,
+  serialized_end=7939,
 )
 _sym_db.RegisterEnumDescriptor(_CONSTANTS)
 
@@ -77,7 +77,7 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='MESSAGE_CHANGE_REAR_GEAR_STATUS', index=4, number=4,
+      name='MESSAGE_SET_REVERSE_GEAR_STATUS', index=4, number=4,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -269,19 +269,19 @@ _MESSAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7911,
-  serialized_end=9456,
+  serialized_start=7942,
+  serialized_end=9487,
 )
 _sym_db.RegisterEnumDescriptor(_MESSAGETYPE)
 
 MessageType = enum_type_wrapper.EnumTypeWrapper(_MESSAGETYPE)
 API_MAJOR_VERSION = 1
-API_MINOR_VERSION = 0
+API_MINOR_VERSION = 1
 MESSAGE_INVALID_ID = 0
 MESSAGE_HELLO_REQUEST = 1
 MESSAGE_HELLO_RESPONSE = 2
 MESSAGE_SET_STATUS_SUBSCRIPTIONS = 3
-MESSAGE_CHANGE_REAR_GEAR_STATUS = 4
+MESSAGE_SET_REVERSE_GEAR_STATUS = 4
 MESSAGE_PROJECTION_STATUS = 5
 MESSAGE_MEDIA_STATUS = 6
 MESSAGE_MEDIA_METADATA = 7
@@ -493,11 +493,16 @@ _MEDIASTATUS_MEDIASOURCE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MEDIA_SOURCE_FM_RADIO', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=1409,
-  serialized_end=1551,
+  serialized_end=1578,
 )
 _sym_db.RegisterEnumDescriptor(_MEDIASTATUS_MEDIASOURCE)
 
@@ -521,8 +526,8 @@ _NAVIGATIONSTATUS_NAVIGATIONSOURCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1831,
-  serialized_end=1913,
+  serialized_start=1858,
+  serialized_end=1940,
 )
 _sym_db.RegisterEnumDescriptor(_NAVIGATIONSTATUS_NAVIGATIONSOURCE)
 
@@ -546,8 +551,8 @@ _NAVIGATIONSTATUS_NAVIGATIONSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1915,
-  serialized_end=1992,
+  serialized_start=1942,
+  serialized_end=2019,
 )
 _sym_db.RegisterEnumDescriptor(_NAVIGATIONSTATUS_NAVIGATIONSTATE)
 
@@ -571,8 +576,8 @@ _REGISTERSTATUSICONRESPONSE_REGISTERSTATUSICONRESULT = _descriptor.EnumDescripto
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2328,
-  serialized_end=2430,
+  serialized_start=2355,
+  serialized_end=2457,
 )
 _sym_db.RegisterEnumDescriptor(_REGISTERSTATUSICONRESPONSE_REGISTERSTATUSICONRESULT)
 
@@ -596,8 +601,8 @@ _REGISTERNOTIFICATIONCHANNELRESPONSE_REGISTERNOTIFICATIONCHANNELRESULT = _descri
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2770,
-  serialized_end=2899,
+  serialized_start=2797,
+  serialized_end=2926,
 )
 _sym_db.RegisterEnumDescriptor(_REGISTERNOTIFICATIONCHANNELRESPONSE_REGISTERNOTIFICATIONCHANNELRESULT)
 
@@ -621,8 +626,8 @@ _OBDCONNECTIONSTATUS_OBDCONNECTIONSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3253,
-  serialized_end=3348,
+  serialized_start=3280,
+  serialized_end=3375,
 )
 _sym_db.RegisterEnumDescriptor(_OBDCONNECTIONSTATUS_OBDCONNECTIONSTATE)
 
@@ -651,8 +656,8 @@ _SUBSCRIBEOBDGAUGECHANGERESPONSE_SUBSCRIBEOBDGAUGECHANGERESULT = _descriptor.Enu
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3664,
-  serialized_end=3841,
+  serialized_start=3691,
+  serialized_end=3868,
 )
 _sym_db.RegisterEnumDescriptor(_SUBSCRIBEOBDGAUGECHANGERESPONSE_SUBSCRIBEOBDGAUGECHANGERESULT)
 
@@ -676,8 +681,8 @@ _REGISTERAUDIOFOCUSRECEIVERREQUEST_AUDIOSTREAMCATEGORY = _descriptor.EnumDescrip
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4113,
-  serialized_end=4216,
+  serialized_start=4140,
+  serialized_end=4243,
 )
 _sym_db.RegisterEnumDescriptor(_REGISTERAUDIOFOCUSRECEIVERREQUEST_AUDIOSTREAMCATEGORY)
 
@@ -701,8 +706,8 @@ _REGISTERAUDIOFOCUSRECEIVERRESPONSE_REGISTERAUDIOFOCUSRECEIVERRESULT = _descript
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4390,
-  serialized_end=4518,
+  serialized_start=4417,
+  serialized_end=4545,
 )
 _sym_db.RegisterEnumDescriptor(_REGISTERAUDIOFOCUSRECEIVERRESPONSE_REGISTERAUDIOFOCUSRECEIVERRESULT)
 
@@ -736,8 +741,8 @@ _AUDIOFOCUSCHANGEREQUEST_AUDIOFOCUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4694,
-  serialized_end=4826,
+  serialized_start=4721,
+  serialized_end=4853,
 )
 _sym_db.RegisterEnumDescriptor(_AUDIOFOCUSCHANGEREQUEST_AUDIOFOCUSTYPE)
 
@@ -776,8 +781,8 @@ _AUDIOFOCUSACTION_AUDIOFOCUSACTIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5099,
-  serialized_end=5307,
+  serialized_start=5126,
+  serialized_end=5334,
 )
 _sym_db.RegisterEnumDescriptor(_AUDIOFOCUSACTION_AUDIOFOCUSACTIONTYPE)
 
@@ -806,8 +811,8 @@ _AUDIOFOCUSACTION_LOSTAUDIOFOCUSTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5309,
-  serialized_end=5430,
+  serialized_start=5336,
+  serialized_end=5457,
 )
 _sym_db.RegisterEnumDescriptor(_AUDIOFOCUSACTION_LOSTAUDIOFOCUSTYPE)
 
@@ -836,8 +841,8 @@ _AUDIOFOCUSMEDIAKEY_AUDIOFOCUSMEDIAKEYEVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5667,
-  serialized_end=5829,
+  serialized_start=5694,
+  serialized_end=5856,
 )
 _sym_db.RegisterEnumDescriptor(_AUDIOFOCUSMEDIAKEY_AUDIOFOCUSMEDIAKEYEVENTTYPE)
 
@@ -881,8 +886,8 @@ _AUDIOFOCUSMEDIAKEY_AUDIOFOCUSMEDIAKEYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5832,
-  serialized_end=6090,
+  serialized_start=5859,
+  serialized_end=6117,
 )
 _sym_db.RegisterEnumDescriptor(_AUDIOFOCUSMEDIAKEY_AUDIOFOCUSMEDIAKEYTYPE)
 
@@ -906,8 +911,8 @@ _PHONECONNECTIONSTATUS_PHONECONNECTIONSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6226,
-  serialized_end=6327,
+  serialized_start=6253,
+  serialized_end=6354,
 )
 _sym_db.RegisterEnumDescriptor(_PHONECONNECTIONSTATUS_PHONECONNECTIONSTATE)
 
@@ -941,8 +946,8 @@ _PHONEVOICECALLSTATUS_PHONEVOICECALLSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6487,
-  serialized_end=6650,
+  serialized_start=6514,
+  serialized_end=6677,
 )
 _sym_db.RegisterEnumDescriptor(_PHONEVOICECALLSTATUS_PHONEVOICECALLSTATE)
 
@@ -1106,8 +1111,8 @@ _KEYEVENT_KEYTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6936,
-  serialized_end=7671,
+  serialized_start=6963,
+  serialized_end=7698,
 )
 _sym_db.RegisterEnumDescriptor(_KEYEVENT_KEYTYPE)
 
@@ -1131,8 +1136,8 @@ _KEYEVENT_EVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7673,
-  serialized_end=7730,
+  serialized_start=7700,
+  serialized_end=7757,
 )
 _sym_db.RegisterEnumDescriptor(_KEYEVENT_EVENTTYPE)
 
@@ -1295,16 +1300,16 @@ _SETSTATUSSUBSCRIPTIONS = _descriptor.Descriptor(
 )
 
 
-_CHANGEREARGEARSTATUS = _descriptor.Descriptor(
-  name='ChangeRearGearStatus',
-  full_name='io.bluewavestudio.openautopro.api.ChangeRearGearStatus',
+_SETREVERSEGEARSTATUS = _descriptor.Descriptor(
+  name='SetReverseGearStatus',
+  full_name='io.bluewavestudio.openautopro.api.SetReverseGearStatus',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='engaged', full_name='io.bluewavestudio.openautopro.api.ChangeRearGearStatus.engaged', index=0,
+      name='engaged', full_name='io.bluewavestudio.openautopro.api.SetReverseGearStatus.engaged', index=0,
       number=1, type=8, cpp_type=7, label=2,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -1411,7 +1416,7 @@ _MEDIASTATUS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1273,
-  serialized_end=1551,
+  serialized_end=1578,
 )
 
 
@@ -1463,8 +1468,8 @@ _MEDIAMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1553,
-  serialized_end=1638,
+  serialized_start=1580,
+  serialized_end=1665,
 )
 
 
@@ -1504,8 +1509,8 @@ _NAVIGATIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1641,
-  serialized_end=1992,
+  serialized_start=1668,
+  serialized_end=2019,
 )
 
 
@@ -1543,8 +1548,8 @@ _NAVIGATIONMANEUVERDETAILS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1994,
-  serialized_end=2056,
+  serialized_start=2021,
+  serialized_end=2083,
 )
 
 
@@ -1575,8 +1580,8 @@ _NAVIGATIONMANEUVERDISTANCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2058,
-  serialized_end=2101,
+  serialized_start=2085,
+  serialized_end=2128,
 )
 
 
@@ -1621,8 +1626,8 @@ _REGISTERSTATUSICONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2103,
-  serialized_end=2179,
+  serialized_start=2130,
+  serialized_end=2206,
 )
 
 
@@ -1661,8 +1666,8 @@ _REGISTERSTATUSICONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2182,
-  serialized_end=2430,
+  serialized_start=2209,
+  serialized_end=2457,
 )
 
 
@@ -1693,8 +1698,8 @@ _UNREGISTERSTATUSICON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2432,
-  serialized_end=2466,
+  serialized_start=2459,
+  serialized_end=2493,
 )
 
 
@@ -1732,8 +1737,8 @@ _CHANGESTATUSICONSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2468,
-  serialized_end=2520,
+  serialized_start=2495,
+  serialized_end=2547,
 )
 
 
@@ -1771,8 +1776,8 @@ _REGISTERNOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2522,
-  serialized_end=2593,
+  serialized_start=2549,
+  serialized_end=2620,
 )
 
 
@@ -1811,8 +1816,8 @@ _REGISTERNOTIFICATIONCHANNELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2596,
-  serialized_end=2899,
+  serialized_start=2623,
+  serialized_end=2926,
 )
 
 
@@ -1843,8 +1848,8 @@ _UNREGISTERNOTIFICATIONCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2901,
-  serialized_end=2944,
+  serialized_start=2928,
+  serialized_end=2971,
 )
 
 
@@ -1910,8 +1915,8 @@ _SHOWNOTIFICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2947,
-  serialized_end=3075,
+  serialized_start=2974,
+  serialized_end=3102,
 )
 
 
@@ -1949,8 +1954,8 @@ _OBDINJECTGAUGEFORMULAVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3077,
-  serialized_end=3137,
+  serialized_start=3104,
+  serialized_end=3164,
 )
 
 
@@ -1982,8 +1987,8 @@ _OBDCONNECTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3140,
-  serialized_end=3348,
+  serialized_start=3167,
+  serialized_end=3375,
 )
 
 
@@ -2014,8 +2019,8 @@ _SUBSCRIBEOBDGAUGECHANGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3350,
-  serialized_end=3403,
+  serialized_start=3377,
+  serialized_end=3430,
 )
 
 
@@ -2089,8 +2094,8 @@ _SUBSCRIBEOBDGAUGECHANGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3406,
-  serialized_end=3841,
+  serialized_start=3433,
+  serialized_end=3868,
 )
 
 
@@ -2121,8 +2126,8 @@ _UNSUBSCRIBEOBDGAUGECHANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3843,
-  serialized_end=3891,
+  serialized_start=3870,
+  serialized_end=3918,
 )
 
 
@@ -2160,8 +2165,8 @@ _OBDGAUGEVALUECHANGED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3893,
-  serialized_end=3951,
+  serialized_start=3920,
+  serialized_end=3978,
 )
 
 
@@ -2200,8 +2205,8 @@ _REGISTERAUDIOFOCUSRECEIVERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3954,
-  serialized_end=4216,
+  serialized_start=3981,
+  serialized_end=4243,
 )
 
 
@@ -2240,8 +2245,8 @@ _REGISTERAUDIOFOCUSRECEIVERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4219,
-  serialized_end=4518,
+  serialized_start=4246,
+  serialized_end=4545,
 )
 
 
@@ -2272,8 +2277,8 @@ _UNREGISTERAUDIOFOCUSRECEIVER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4520,
-  serialized_end=4562,
+  serialized_start=4547,
+  serialized_end=4589,
 )
 
 
@@ -2312,8 +2317,8 @@ _AUDIOFOCUSCHANGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4565,
-  serialized_end=4826,
+  serialized_start=4592,
+  serialized_end=4853,
 )
 
 
@@ -2351,8 +2356,8 @@ _AUDIOFOCUSCHANGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4828,
-  serialized_end=4882,
+  serialized_start=4855,
+  serialized_end=4909,
 )
 
 
@@ -2399,8 +2404,8 @@ _AUDIOFOCUSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4885,
-  serialized_end=5430,
+  serialized_start=4912,
+  serialized_end=5457,
 )
 
 
@@ -2447,8 +2452,8 @@ _AUDIOFOCUSMEDIAKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5433,
-  serialized_end=6090,
+  serialized_start=5460,
+  serialized_end=6117,
 )
 
 
@@ -2487,8 +2492,8 @@ _PHONECONNECTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6093,
-  serialized_end=6327,
+  serialized_start=6120,
+  serialized_end=6354,
 )
 
 
@@ -2534,8 +2539,8 @@ _PHONEVOICECALLSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6330,
-  serialized_end=6650,
+  serialized_start=6357,
+  serialized_end=6677,
 )
 
 
@@ -2573,8 +2578,8 @@ _PHONELEVELSSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6652,
-  serialized_end=6738,
+  serialized_start=6679,
+  serialized_end=6765,
 )
 
 
@@ -2605,8 +2610,8 @@ _TEMPERATURESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6740,
-  serialized_end=6774,
+  serialized_start=6767,
+  serialized_end=6801,
 )
 
 
@@ -2646,8 +2651,8 @@ _KEYEVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6777,
-  serialized_end=7730,
+  serialized_start=6804,
+  serialized_end=7757,
 )
 
 
@@ -2685,8 +2690,8 @@ _SETDAYNIGHT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7732,
-  serialized_end=7802,
+  serialized_start=7759,
+  serialized_end=7829,
 )
 
 
@@ -2717,8 +2722,8 @@ _INJECTTEMPERATURESENSORVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7804,
-  serialized_end=7849,
+  serialized_start=7831,
+  serialized_end=7876,
 )
 
 _HELLOREQUEST.fields_by_name['api_version'].message_type = _VERSION
@@ -2772,7 +2777,7 @@ DESCRIPTOR.message_types_by_name['Version'] = _VERSION
 DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
 DESCRIPTOR.message_types_by_name['HelloResponse'] = _HELLORESPONSE
 DESCRIPTOR.message_types_by_name['SetStatusSubscriptions'] = _SETSTATUSSUBSCRIPTIONS
-DESCRIPTOR.message_types_by_name['ChangeRearGearStatus'] = _CHANGEREARGEARSTATUS
+DESCRIPTOR.message_types_by_name['SetReverseGearStatus'] = _SETREVERSEGEARSTATUS
 DESCRIPTOR.message_types_by_name['ProjectionStatus'] = _PROJECTIONSTATUS
 DESCRIPTOR.message_types_by_name['MediaStatus'] = _MEDIASTATUS
 DESCRIPTOR.message_types_by_name['MediaMetadata'] = _MEDIAMETADATA
@@ -2839,12 +2844,12 @@ SetStatusSubscriptions = _reflection.GeneratedProtocolMessageType('SetStatusSubs
   })
 _sym_db.RegisterMessage(SetStatusSubscriptions)
 
-ChangeRearGearStatus = _reflection.GeneratedProtocolMessageType('ChangeRearGearStatus', (_message.Message,), {
-  'DESCRIPTOR' : _CHANGEREARGEARSTATUS,
+SetReverseGearStatus = _reflection.GeneratedProtocolMessageType('SetReverseGearStatus', (_message.Message,), {
+  'DESCRIPTOR' : _SETREVERSEGEARSTATUS,
   '__module__' : 'Api_pb2'
-  # @@protoc_insertion_point(class_scope:io.bluewavestudio.openautopro.api.ChangeRearGearStatus)
+  # @@protoc_insertion_point(class_scope:io.bluewavestudio.openautopro.api.SetReverseGearStatus)
   })
-_sym_db.RegisterMessage(ChangeRearGearStatus)
+_sym_db.RegisterMessage(SetReverseGearStatus)
 
 ProjectionStatus = _reflection.GeneratedProtocolMessageType('ProjectionStatus', (_message.Message,), {
   'DESCRIPTOR' : _PROJECTIONSTATUS,
@@ -3085,4 +3090,5 @@ InjectTemperatureSensorValue = _reflection.GeneratedProtocolMessageType('InjectT
 _sym_db.RegisterMessage(InjectTemperatureSensorValue)
 
 
+_CONSTANTS._options = None
 # @@protoc_insertion_point(module_scope)
