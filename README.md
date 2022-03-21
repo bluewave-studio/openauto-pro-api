@@ -18,7 +18,7 @@ In case of support, suggestions or any other queries, please visit our [communit
 * Reading OBD-II data
 * Fetching phone status
 * Fetching projection status
-* Controlling rear gear status
+* Controlling reverse gear status
 * Displaying status icons
 * Injecting temperature
 * Reading temperature
