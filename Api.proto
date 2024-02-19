@@ -328,8 +328,9 @@ message SubscribeObdGaugeChangeResponse {
     optional string label = 3;
     optional double min_value = 4;
     optional double max_value = 5;
-    optional double limit = 6;
-    optional int32 precision = 7;
+    optional double min_limit = 6;
+    optional double max_limit = 7;
+    optional int32 precision = 8;
 }
 
 /*

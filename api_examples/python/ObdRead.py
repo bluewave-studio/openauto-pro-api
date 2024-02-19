@@ -13,7 +13,8 @@ class EventHandler(ClientEventHandler):
         self._subscribed = False
         self._min_value = None
         self._max_value = None
-        self._limit = None
+        self._min_limit = None
+        self._max_limit = None
         self._label = None
         self._precision = None
 
@@ -39,14 +40,15 @@ class EventHandler(ClientEventHandler):
     def on_subscribe_obd_gauge_change_response(self, client, message):
         self._min_value = message.min_value
         self._max_value = message.max_value
-        self._limit = message.limit
+        self._min_limit = message.min_limit
+        self._max_limit = message.max_limit
         self._label = message.label
         self._precision = message.precision
 
         print(
-            "subscribe obd gauge change response, gauge index: {}, min value: {}, max value: {}, limit: {}, label: {}, precision: {}"
+            "subscribe obd gauge change response, gauge index: {}, min value: {}, max value: {}, min_limit: {}, max_limit: {}, label: {}, precision: {}"
             .format(message.gauge_index, self._min_value, self._max_value,
-                    self._limit, self._label, self._precision))
+                    self._min_limit, self._max_limit, self._label, self._precision))
 
         if message.result == oap_api.SubscribeObdGaugeChangeResponse.SUBSCRIBE_OBD_GAUGE_CHANGE_RESULT_OK:
             self._subscribed = True
@@ -60,7 +62,8 @@ class EventHandler(ClientEventHandler):
             self._subscribed = False
             self._min_value = None
             self._max_value = None
-            self._limit = None
+            self._min_limit = None
+            self._max_limit = None
             self._label = None
             self._precision = None
 
