@@ -34,5 +34,5 @@ protoc --python_out=api_examples/python/common/ Api.proto
 ## **Message format**
 | | Field 1 | Field 2 | Field 3 | Field 4 |
 | --- | --- | --- | --- | --- |
-| **Description** | Size of the Protocol Buffers byte steam | Message Id | Flags | Protocol Buffers byte steam |
+| **Description** | Size of the Protocol Buffers byte stream | Message Id | Flags | Protocol Buffers byte stream |
 | **Size** | 32-bit unsigned integer (little endian) | 32-bit unsigned integer (little endian) | 32-bit unsigned integer (little endian) | n |
